@@ -1,0 +1,39 @@
+-- USE DATABASE
+USE employee_sales_analytics;
+
+-- 2) TABLE DEPARTMENTS
+-- PURPOSE: DEPARTMENT MASTER DATA
+CREATE TABLE departments (
+dept_id INT PRIMARY KEY,
+dept_name VARCHAR(50) NOT NULL
+);
+
+-- 3) TABLE EMPLOYEES
+-- PURPOSE: EMPLOYEE DETAILS AND REPORTING HIERARCHY
+CREATE TABLE employees (
+emp_id INT PRIMARY KEY,
+emp_name VARCHAR(50) NOT NULL,
+dept_id INT NOT NULL,
+salary DECIMAL(10,2) NOT NULL,
+manager_id INT NULL,
+hire_date DATE NOT NULL,
+CONSTRAINT fk_emp_dept
+FOREIGN KEY (dept_id)
+REFERENCES departments(dept_id)
+);
+
+-- 4) TABLE ORDERS
+-- PURPOSE: SALES TRANSACTIONS (TIME-BASED ANALYSIS)
+CREATE TABLE orders (
+order_id INT PRIMARY KEY,
+emp_id INT NOT NULL,
+order_date DATE NOT NULL,
+amount DECIMAL(10,2) NOT NULL,
+CONSTRAINT fk_orders_emp
+FOREIGN KEY (emp_id)
+REFERENCES employees(emp_id)
+);
+
+SHOW TABLES;
+DESCRIBE employees;
+DESCRIBE orders;
