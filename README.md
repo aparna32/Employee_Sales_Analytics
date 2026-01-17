@@ -47,7 +47,7 @@ The project focuses on employee sales performance, organizational hierarchy, dep
 ---
 
 ## Project Structure
-
+```
 employee-sales-analytics-sql/
 │
 ├── schema/
@@ -71,7 +71,7 @@ employee-sales-analytics-sql/
 ├── LICENSE
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ## How to Run (Execution Order)
