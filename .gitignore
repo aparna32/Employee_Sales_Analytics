@@ -1,0 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets
+.env
+.env.*
+
+# Temp/logs/backups
+*.log
+*.tmp
+*.bak
+
+# Optional exports (only if you export results)
+*.csv
+*.xlsx
